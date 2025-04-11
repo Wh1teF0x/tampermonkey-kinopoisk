@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Flicksbar redirect
 // @namespace    https://t.me/flicksbar
-// @version      1.0.9
+// @version      1.0.10
 // @description  Смотреть фильмы онлайн бесплатно без регистрации и смс
 // @author       @whi1tef0x - tg
 // @match        https://www.kinopoisk.ru/series/*/*
@@ -46,6 +46,8 @@ function flicksbar() {
   playBtn.style.height = '44px';
 
   document.body.appendChild(playBtn);
+
+  // update test
 }
 
 window.onload = flicksbar();
