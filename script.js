@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Flicksbar redirect test
+// @name         Kinopoisk free
 // @version      1.0.12
 // @description  Смотреть фильмы онлайн бесплатно без регистрации и смс
 // @author       @whi1tef0x - tg
