@@ -1,1 +1,1 @@
-# tampermonkey_kinopoisk
+# tampermonkey-kinopoisk
