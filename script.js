@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Flicksbar redirect
 // @namespace    https://t.me/flicksbar
-// @version      1.0.8
+// @version      1.0.9
 // @description  Смотреть фильмы онлайн бесплатно без регистрации и смс
 // @author       @whi1tef0x - tg
 // @match        https://www.kinopoisk.ru/series/*/*
