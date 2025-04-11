@@ -1,49 +1,54 @@
 // ==UserScript==
-// @name         Flicksbar redirect
+// @name         Flicksbar redirect test
 // @version      1.0.12
 // @description  Смотреть фильмы онлайн бесплатно без регистрации и смс
 // @author       @whi1tef0x - tg
 // @match        https://www.kinopoisk.ru/series/*/*
 // @match        https://www.kinopoisk.ru/film/*/*
-// @downloadURL  https://raw.githubusercontent.com/Wh1teF0x/tampermonkey_kinopoisk/refs/heads/main/script.js
-// @updateURL    https://raw.githubusercontent.com/Wh1teF0x/tampermonkey_kinopoisk/refs/heads/main/script.js
+// @downloadURL  https://raw.githubusercontent.com/Wh1teF0x/tampermonkey-kinopoisk/refs/heads/main/script.js
+// @updateURL    https://raw.githubusercontent.com/Wh1teF0x/tampermonkey-kinopoisk/refs/heads/main/script.js
+// @grant GM_addStyle
 // @license MIT
 // ==/UserScript==
 function flicksbar() {
   const url = window.location.href;
-  const kinopoiskId = url.match('/(series|film)/(?<id_kp>.+?)/');
+  const kinopoiskId = url.match("/(series|film)/(?<id_kp>.+?)/");
   const flickbarUrl = `https://flicksbar.mom/film/${kinopoiskId[2]}`;
 
-  const playBtn = document.createElement('button');
+  const playBtn = document.createElement("button");
 
-  playBtn.type = 'button';
-  playBtn.innerHTML = 'Смотреть';
-  playBtn.onclick = () => window.open(`${flickbarUrl}`, '_blank');
+  playBtn.type = "button";
+  playBtn.innerHTML = "Смотреть";
+  playBtn.classList.add("playBtn");
+  playBtn.onclick = () => window.open(`${flickbarUrl}`, "_blank");
 
-  playBtn.style.fontFamily = 'Graphik Kinopoisk LC Web,Arial,Tahoma,Verdana,sans-serif';
-  playBtn.style.color = '#fff';
-  playBtn.style.fontSize = '13px';
-  playBtn.style.fontWeight = '500';
+  GM_addStyle(`
+    .playBtn {  
+      display: inline;
+      position: fixed;
+      z-index: 999999;
+      bottom: 30px;
+      right: 30px;
+      height: 44px;
+      padding: 9px 15px 9px 38px;
+      margin-right: 1px;
+      cursor: pointer;
 
-  playBtn.style.backgroundColor = '#f60';
-  playBtn.style.backgroundImage = `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='%23fff'%3E %3Cpath fill-rule='evenodd' d='M3 1.3v9.4L10.311 6z'/%3E %3C/svg%3E")`;
-  playBtn.style.backgroundPosition = '15px 13px';
-  playBtn.style.backgroundSize = '18px';
-  playBtn.style.backgroundRepeat = 'no-repeat';
+      border: none;
+      border-radius: 4.4px;
 
-  playBtn.style.cursor = 'pointer';
-  playBtn.style.border = '0';
-  playBtn.style.borderRadius = '4.4px';
-  playBtn.style.marginRight = '1px';
+      font-family: Graphik Kinopoisk LC Web,Arial,Tahoma,Verdana,sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #fff;
 
-  playBtn.style.position = 'fixed';
-  playBtn.style.zIndex = '999999';
-  playBtn.style.display = 'inline';
-  playBtn.style.bottom = '30px';
-  playBtn.style.right = '30px';
-  playBtn.style.padding = '9px 15px 9px 38px';
-  playBtn.style.height = '44px';
-
+      background-color: #f60;
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='%23fff'%3E %3Cpath fill-rule='evenodd' d='M3 1.3v9.4L10.311 6z'/%3E %3C/svg%3E");
+      background-position: 15px 13px;
+      background-size: 18px;
+      background-repeat: no-repeat;
+    }
+  `);
   document.body.appendChild(playBtn);
 }
 
