@@ -6,8 +6,8 @@
 // @author       @whi1tef0x - tg
 // @match        https://www.kinopoisk.ru/series/*/*
 // @match        https://www.kinopoisk.ru/film/*/*
-// @downloadURL  <blank>
-// @updateURL    <blank>
+// @downloadURL  https://raw.githubusercontent.com/Wh1teF0x/tampermonkey_kinopoisk/refs/heads/main/script.js
+// @updateURL    https://raw.githubusercontent.com/Wh1teF0x/tampermonkey_kinopoisk/refs/heads/main/script.js
 // @license MIT
 // ==/UserScript==
 function flicksbar() {
