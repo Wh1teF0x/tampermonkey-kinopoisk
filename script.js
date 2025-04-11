@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Kinopoisk free
-// @version      1.0.12
+// @version      1.0.13
 // @description  Смотреть фильмы онлайн бесплатно без регистрации и смс
 // @author       @whi1tef0x - tg
 // @match        https://www.kinopoisk.ru/series/*/*
