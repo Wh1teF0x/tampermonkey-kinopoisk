@@ -49,6 +49,7 @@ function flicksbar() {
       background-repeat: no-repeat;
     }
   `);
+  
   document.body.appendChild(playBtn);
 }
 
