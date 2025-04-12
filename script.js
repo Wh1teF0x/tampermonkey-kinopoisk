@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Kinopoisk редирект
-// @version      1.0.15
+// @version      1.0.16
 // @description  Смотреть фильмы онлайн бесплатно без регистрации и смс
 // @author       @whi1tef0x - tg
 // @match        https://www.kinopoisk.ru/series/*/*
@@ -21,7 +21,7 @@ function attachRedirect() {
     playBtn.type = 'button';
     playBtn.innerHTML = 'Смотреть';
     playBtn.classList.add('playBtn');
-    playBtn.onclick = () => window.open(`${flickbarUrl}`, '_blank');
+    playBtn.addEventListener('click', () => window.open(`${flickbarUrl}`, '_blank'));
 
     GM_addStyle(`
       .playBtn {  
@@ -53,7 +53,7 @@ function attachRedirect() {
 
     document.body.appendChild(playBtn);
   } catch (e) {
-    console.log('UserScript: Something wrong');
+    console.log('UserScript: Error in user script');
     console.error(e);
   }
 }
